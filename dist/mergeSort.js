@@ -1,0 +1,39 @@
+var Sort;
+(function (Sort) {
+    /**
+     * Clase que implementa el algoritmo MergeSort
+     */
+    class MergeSort {
+        /**
+         * Ordena el array usando el algoritmo mergeSort
+         * @param data
+         * @returns
+         */
+        execute(data) {
+            if (data.length <= 1) {
+                return data;
+            }
+            const middle = Math.floor(data.length / 2);
+            const left = data.slice(0, middle);
+            const right = data.slice(middle);
+            return this.merge(this.execute(left), this.execute(right));
+        }
+        merge(left, right) {
+            let resultArray = [], leftIndex = 0, rightIndex = 0;
+            while (leftIndex < left.length && rightIndex < right.length) {
+                if (left[leftIndex] < right[rightIndex]) {
+                    resultArray.push(left[leftIndex]);
+                    leftIndex++;
+                }
+                else {
+                    resultArray.push(right[rightIndex]);
+                    rightIndex++;
+                }
+            }
+            return resultArray
+                .concat(left.slice(leftIndex))
+                .concat(right.slice(rightIndex));
+        }
+    }
+    Sort.MergeSort = MergeSort;
+})(Sort || (Sort = {}));
