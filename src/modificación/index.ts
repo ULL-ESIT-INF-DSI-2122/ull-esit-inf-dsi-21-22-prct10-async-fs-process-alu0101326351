@@ -1,4 +1,4 @@
-import { Watch } from "./mod";
+import { Watch } from "../modificación/mod";
 
 if (process.argv.length !== 4) {
     console.log('No se ha introducido el fichero y el campo');
