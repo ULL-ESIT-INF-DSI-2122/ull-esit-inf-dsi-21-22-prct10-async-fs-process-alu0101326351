@@ -30,3 +30,5 @@ export class CountWords {
     }
 };
 
+let counter: CountWords = new CountWords(process.argv[2])
+counter.count();
