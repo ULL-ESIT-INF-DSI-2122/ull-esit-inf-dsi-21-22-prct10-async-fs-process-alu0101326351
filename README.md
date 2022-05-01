@@ -27,10 +27,6 @@ export class CountWords {
     }
 };
 
-*Ejemplo de ejecución*
-
-![ej2](ej2.ts)
-
 
 ## Ejercicio 3
 Se ha creado la clase Watch. El constructor recibe la ruta que se va a obervar y la almacena en una atributo privado de tipo string. La función watchDir comprueba si la ruta existe, en caso afirmativo se queda a la escucha mediante el método fs.watch(). Cuando se produce un cambio se emite un evento, dependiendo de el evento que emita la función se ejecuta una acción u otra.
